@@ -352,6 +352,264 @@
                 font-size: 1.8em;
             }
         }
+        
+        @media (max-width: 1024px) {
+    .main-content {
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(20, 20px);
+        grid-template-rows: repeat(20, 20px);
+        max-width: 400px;
+        margin: 15px auto;
+    }
+    
+    .cell {
+        font-size: 0.9em;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+}
+
+/* Для мобильных устройств (ширина до 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        border-radius: 15px;
+    }
+    
+    header {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    .main-content {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .questions-section {
+        padding: 20px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(20, 16px);
+        grid-template-rows: repeat(20, 16px);
+        max-width: 320px;
+        gap: 1px;
+        padding: 2px;
+    }
+    
+    .cell {
+        font-size: 0.75em;
+    }
+    
+    .cell-number {
+        font-size: 0.45em;
+        top: 0;
+        left: 0;
+    }
+    
+    .input-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    #word-input {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px;
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+    
+    #submit-btn {
+        width: 100%;
+        max-width: 300px;
+        margin-left: 0;
+        padding: 12px;
+    }
+    
+    .controls {
+        gap: 10px;
+        margin: 15px 0;
+    }
+    
+    .control-btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .question-item {
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .question-text {
+        font-size: 0.9em;
+    }
+    
+    .scientist-info {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .scientist-name {
+        font-size: 1.3em;
+    }
+}
+
+/* Для очень маленьких экранов (ширина до 480px) */
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(20, 14px);
+        grid-template-rows: repeat(20, 14px);
+        max-width: 280px;
+    }
+    
+    .cell {
+        font-size: 0.65em;
+    }
+    
+    .cell-number {
+        font-size: 0.4em;
+    }
+    
+    h1 {
+        font-size: 1.3em;
+    }
+    
+    .subtitle {
+        font-size: 0.9em;
+    }
+    
+    h2 {
+        font-size: 1.2em;
+    }
+    
+    .questions-section {
+        padding: 15px;
+    }
+    
+    .question-item {
+        padding: 10px;
+    }
+    
+    .question-text {
+        font-size: 0.85em;
+        line-height: 1.4;
+    }
+    
+    .progress {
+        font-size: 1em;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .control-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .congrats h2 {
+        font-size: 2em;
+    }
+    
+    .congrats p {
+        font-size: 1.2em;
+        padding: 0 15px;
+    }
+}
+
+/* Для горизонтальной ориентации на мобильных */
+@media (max-height: 600px) and (orientation: landscape) {
+    .main-content {
+        flex-direction: row;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(20, 14px);
+        grid-template-rows: repeat(20, 14px);
+        max-width: 280px;
+    }
+    
+    header {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.4em;
+    }
+}
+
+/* Улучшение для сенсорных устройств */
+@media (hover: none) and (pointer: coarse) {
+    .cell {
+        min-height: 20px;
+        min-width: 20px;
+    }
+    
+    .question-item {
+        padding: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .control-btn, #submit-btn {
+        padding: 14px 20px;
+        min-height: 50px;
+    }
+    
+    /* Увеличиваем область касания */
+    .cell::after {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+    }
+}
+
+/* Предотвращение масштабирования при вводе на iOS */
+@media (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px; /* Предотвращает масштабирование на iOS */
+    }
+}
+
+/* Анимация для улучшения UX на мобильных */
+@media (max-width: 768px) {
+    .question-item:active {
+        transform: scale(0.98);
+        transition: transform 0.1s;
+    }
+    
+    .control-btn:active {
+        transform: scale(0.95);
+        transition: transform 0.1s;
+    }
+}
     </style>
 </head>
 <body>
@@ -415,7 +673,7 @@
                 {
                     id: 1,
                     word: "ДОГЕЛЬ",
-                    question: "Описал 10 ти пов нервных клеток в чувствительтных узлах. выделил три типа нейронов в вегетативной нервной системе",
+                    question: "Описал 10 типов нервных клеток в чувствительтных узлах. выделил три типа нейронов в вегетативной нервной системе",
                     direction: "vertical",
                     start: {x: 10, y: 0},
                     length: 6,
@@ -966,6 +1224,42 @@
 
         // Запуск игры при загрузке страницы
         window.addEventListener('DOMContentLoaded', initGame);
+
+        function optimizeForMobile() {
+    // Увеличиваем область касания для маленьких клеток
+    if (window.innerWidth <= 768) {
+        document.querySelectorAll('.cell').forEach(cell => {
+            cell.style.minWidth = '20px';
+            cell.style.minHeight = '20px';
+        });
+    }
+    
+    // Предотвращаем масштабирование при фокусе на инпут
+    const input = document.getElementById('word-input');
+    input.addEventListener('focus', () => {
+        setTimeout(() => {
+            document.body.style.zoom = '1.0';
+        }, 100);
+    });
+    
+    // Добавляем вибрацию на тап (если поддерживается)
+    document.querySelectorAll('.cell, .control-btn, .question-item').forEach(el => {
+        el.addEventListener('touchstart', function() {
+            if (navigator.vibrate) {
+                navigator.vibrate(10);
+            }
+        });
+    });
+}
+
+// Инициализация при загрузке и изменении размера окна
+window.addEventListener('DOMContentLoaded', () => {
+    initGame();
+    optimizeForMobile();
+});
+
+window.addEventListener('resize', optimizeForMobile);
+
     </script>
 </body>
 </html>
